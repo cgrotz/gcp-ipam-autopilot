@@ -1,0 +1,4 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: [ 'build', '-t', 'us-docker.pkg.dev/ox-gcp-ipam-autopilot/ipam-autopilot/ipam-autopilot', '.' ]
+images: ['us-docker.pkg.dev/ox-gcp-ipam-autopilot/ipam-autopilot/ipam-autopilot']
