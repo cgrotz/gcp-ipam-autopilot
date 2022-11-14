@@ -1,6 +1,8 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: [ 'build', '-t', 'us-docker.pkg.dev/ox-ipam-autopilot/ipam-autopilot/ipam-autopilot:${SHORT_SHA}', '.' ]
-images: ['us-docker.pkg.dev/ox-ipam-autopilot/ipam-autopilot/ipam-autopilot:latest']
+  args: [ 'build', '-t', 'us-docker.pkg.dev/ox-ipam-autopilot/ipam-autopilot/ipam-autopilot:${SHORT_SHA}', '-t', 'us-docker.pkg.dev/ox-ipam-autopilot/ipam-autopilot/ipam-autopilot:latest', '.' ]
+images: 
+- 'us-docker.pkg.dev/ox-ipam-autopilot/ipam-autopilot/ipam-autopilot:${SHORT_SHA}'
+- 'us-docker.pkg.dev/ox-ipam-autopilot/ipam-autopilot/ipam-autopilot:latest'
 options:
   logging: CLOUD_LOGGING_ONLY
