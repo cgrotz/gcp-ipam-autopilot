@@ -6,9 +6,9 @@ It connects to Cloud Asset Inventory to also retrieve already existing subnets a
 ![Architecture showing Terraform, CloudRun, CloudSQL and Cloud Asset Inventory](./img/architecture.png "IPAM Autopilot Architecture")
 
 IPAM Autopilot consists of three parts:
-  * [container image](./container) that provides a REST API
-  * [terraform module](./terraform-module) which implements backend service infrastructure required to host container image
-  * [terraform provider](https://registry.terraform.io/providers/openx/gcp-ipam-autopilot) which implements integration between terraform and backend service
+  * [container image](./container) provides a REST API
+  * [terraform module](https://registry.terraform.io/modules/openx/ipam-autopilot/google/latest) implements backend service infrastructure required to host container image
+  * [terraform provider](https://registry.terraform.io/providers/openx/gcp-ipam-autopilot) implements integration between terraform and backend service
 
 The provider uses application default credentials to authenticate against the backend. Alternatively you can directly provide an identity token via the `GCP_IDENTITY_TOKEN` environment variable to access the Cloud Run instance, the audience for the identity token should be the domain of the Cloud Run service.
 
